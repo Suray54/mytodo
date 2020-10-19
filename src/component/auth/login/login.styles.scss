@@ -5,12 +5,17 @@
   justify-content: center;
   height: 100vh;
   background-color: var(--background);
+
   h2 {
     font-size: 26px;
     font-weight: 900;
     color: var(--primary-login);
   }
   form {
+    @media only screen and (max-width: 650px) {
+      width: 30rem;
+      margin: 0 20px;
+    }
     display: flex;
     flex-direction: column;
     width: 40rem;
@@ -72,6 +77,10 @@
     }
   }
   .signup-link {
+    @media only screen and (max-width: 650px) {
+      width: 30rem;
+      margin: 0 20px;
+    }
     margin-top: 10px;
     width: 40rem;
     padding: 1rem;
@@ -94,6 +103,10 @@
     }
   }
   .error-link {
+    @media only screen and (max-width: 650px) {
+      width: 30rem;
+      margin: 0 20px;
+    }
     margin-top: 10px;
     width: 40rem;
     padding: 1rem;
