@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 6px 16%;
+  background-color: var(--primary);
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  z-index: 1000;
+  .logo {
+    cursor: pointer;
+    img {
+      width: 45px;
+    }
+  }
+  .options {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: var(--color-white);
+    font-size: 25px;
+    font-weight: 700;
+    &__todoadd {
+      cursor: pointer;
+    }
+    &__signout {
+      margin-left: 30px;
+      cursor: pointer;
+    }
+  }
+}

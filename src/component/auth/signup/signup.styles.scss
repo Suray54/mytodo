@@ -1,0 +1,108 @@
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--background);
+  h2 {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--primary-signup);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: var(--color-white);
+    margin-top: 10px;
+    .input-container {
+      width: 100%;
+      margin: 8px 0;
+      display: flex;
+      outline: none;
+      border: 1.5px solid var(--background);
+      border-radius: 5px;
+    }
+    .icon {
+      font-size: 14px;
+      font-weight: 400;
+      outline: none;
+      padding: 12px 14px;
+      border: none;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      font-size: 14px;
+      font-weight: 500;
+      outline: none;
+      padding-right: 10px;
+      border: none;
+      width: 100%;
+      &::-webkit-input-placeholder {
+        color: var(--color-grey);
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+    .submit-button {
+      margin: 5px 0;
+      background-color: var(--primary-signup);
+      border: none;
+      padding: 10px 34px;
+      outline: none;
+      font-weight: 700;
+      color: var(--color-white);
+      border-radius: 5px;
+    }
+    .loading {
+      margin: 5px 0;
+      border: none;
+      padding: 10px 34px;
+      outline: none;
+      font-weight: 700;
+      color: var(--color-white);
+      border-radius: 5px;
+      background-color: var(--primary-signup);
+      opacity: 0.6;
+    }
+  }
+  .login-link {
+    margin-top: 10px;
+    width: 40rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--color-white);
+    &--link {
+      margin-left: 5px;
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: var(--primary-signup);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .error-link {
+    margin-top: 10px;
+    width: 40rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border: 1.5px solid #d9d9d9;
+    color: red;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--color-white);
+  }
+}

@@ -1,0 +1,113 @@
+.list {
+  @media only screen and (max-width: 900px) {
+    width: 70%;
+    margin-left: 30%;
+  }
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    margin-left: 0;
+  }
+  width: 50%;
+  margin-left: 35%;
+  padding: 30px;
+
+  .withcolor {
+    padding: 5px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: var(--color-white);
+    color: var(--color-write);
+    span {
+      color: var(--primary);
+    }
+    &:hover {
+      background-color: var(--primary);
+      color: var(--color-white);
+      span {
+        color: var(--color-white);
+      }
+    }
+  }
+  &__addtodo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    color: var(--color-write);
+    cursor: pointer;
+    span {
+      font-size: 20px;
+      margin-right: 10px;
+      font-weight: 400;
+      color: var(--primary);
+    }
+    width: auto;
+    text-transform: capitalize;
+  }
+  &__todo {
+    padding: 20px 0;
+    &--trash {
+      border: none;
+      outline: none;
+      background-color: none;
+      display: none;
+      cursor: pointer;
+    }
+    &--detail {
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &--single {
+      font-size: 1.4rem;
+      color: var(--color-write);
+      text-transform: capitalize;
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        &:hover .list-todo--trash {
+          display: inline-block;
+        }
+        &:hover .list__todo--trash {
+          display: inline-block;
+        }
+        .checkbox {
+          cursor: pointer;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            border: 2px solid var(--color-light-grey);
+          }
+        }
+
+        .checkbox-completed {
+          background-color: var(--primary);
+        }
+        .task {
+          margin: 0;
+          padding: 0;
+          margin-left: 10px;
+          width: 90%;
+        }
+        .task-completed {
+          color: var(--color-grey);
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

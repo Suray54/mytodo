@@ -1,0 +1,47 @@
+.addprojects {
+  form {
+    .input-container {
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 5px;
+      outline-color: var(--primary);
+      border: 2px solid var(--color-grey);
+      width: 90%;
+      &::-webkit-input-placeholder {
+        color: var(--color-grey);
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .button {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    &__add {
+      border: 0;
+      outline: none;
+      padding: 6px 12px;
+      font-weight: 600;
+      color: var(--color-white);
+      border-radius: 5px;
+      text-transform: capitalize;
+      background-color: var(--primary);
+    }
+    &__cancel {
+      cursor: pointer;
+      border: 0;
+      outline: none;
+      padding: 6px 12px;
+      font-weight: 600;
+      background-color: transparent;
+      border-radius: 5px;
+      text-transform: capitalize;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.addtodo {
+  @media only screen and (max-width: 900px) {
+    width: 70%;
+    margin-left: 30%;
+  }
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    margin-left: 0%;
+  }
+  width: 50%;
+  padding: 30px;
+  margin-left: 35%;
+
+  h4 {
+    span {
+      color: var(--primary);
+      margin-right: 10px;
+    }
+  }
+  form {
+    margin-top: 30px;
+    width: 90%;
+    .input-container {
+      margin-top: 10px;
+    }
+    input[type="text"],
+    [type="date"] {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 5px;
+      outline-color: var(--primary);
+      border: 2px solid var(--color-grey);
+      width: 100%;
+      &::-webkit-input-placeholder {
+        color: var(--color-grey);
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+    select {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 5px;
+      outline-color: var(--primary);
+      border: 2px solid var(--color-grey);
+
+      width: 100%;
+    }
+    .button {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      &__add {
+        border: 0;
+        outline: none;
+        padding: 10px 15px;
+        font-weight: 600;
+        color: var(--color-white);
+        border-radius: 5px;
+        text-transform: capitalize;
+        background-color: var(--primary);
+      }
+      &__cancel {
+        cursor: pointer;
+        border: 0;
+        outline: none;
+        padding: 10px 15px;
+        font-weight: 600;
+        background-color: transparent;
+        border-radius: 5px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

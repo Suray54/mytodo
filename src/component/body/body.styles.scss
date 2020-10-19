@@ -1,0 +1,26 @@
+.main-body {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  margin-top: 60px;
+
+  .space--one {
+    @media only screen and (max-width: 900px) {
+      width: 0;
+    }
+    background-color: var(--background-color);
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+  }
+  .space--two {
+    @media only screen and (max-width: 900px) {
+      width: 0;
+    }
+    margin-left: 85%;
+    background-color: var(--background-color);
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+  }
+}

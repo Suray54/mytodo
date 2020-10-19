@@ -1,0 +1,47 @@
+.list-projects {
+  &__empty {
+    padding: 5px 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  &__list {
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  &__single {
+    &:hover .list-projects__single--trash {
+      display: inline-block;
+    }
+    &--dot {
+      font-size: 0.8rem;
+      color: var(--primary-login);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+    &--trash {
+      border: none;
+      outline: none;
+      background-color: none;
+      display: none;
+      cursor: pointer;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: (--primary);
+
+    &:hover {
+      background-color: var(--color-white);
+    }
+  }
+}

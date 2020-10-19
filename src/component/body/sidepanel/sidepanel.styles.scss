@@ -1,0 +1,59 @@
+.sidepanel {
+  @media only screen and (max-width: 900px) {
+    width: 30%;
+    margin-left: 0;
+  }
+  @media only screen and (max-width: 650px) {
+    width: 0%;
+    display: none;
+  }
+  margin-left: 15%;
+  background-color: var(--background-color);
+  width: 20%;
+  position: fixed;
+  height: 100vh;
+  padding: 5px;
+
+  &__generic {
+    li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      .icon {
+        margin-right: 10px;
+        transition: 0.3s;
+        transform: rotate(360deg);
+      }
+      .reverse-icon {
+        transform: rotate(180deg);
+        transition: 0.3s;
+      }
+      &:hover {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  &__projects {
+    margin-top: 10px;
+  }
+
+  &__toogleprojects {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px;
+    &:hover {
+      background-color: var(--color-white);
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      span {
+        margin-right: 5px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+}
