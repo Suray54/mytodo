@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./addtodo.styles.scss";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+
 import { setShowAddToDo } from "../../../../redux/todo/todo.actions";
 import { firebaseAddToDo } from "../../../../firebase/firebase.utils";
 import { selectCurrentUser } from "../../../../redux/user/user.selector";
-import { timestamp } from "../../../../firebase/firebase.utils";
-
 import { selectAllProject } from "../../../../redux/projects/project.selector";
+
+import "./addtodo.styles.scss";
+
 export class Addtodo extends Component {
   constructor() {
     super();
@@ -26,7 +27,7 @@ export class Addtodo extends Component {
     const { uid } = selectCurrentUser;
 
     try {
-      const createdAt = timestamp();
+      const createdAt = Date.now();
 
       firebaseAddToDo({ addtask, uid, createdAt, addproject });
       this.setState({

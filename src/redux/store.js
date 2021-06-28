@@ -1,9 +1,37 @@
-import { createStore, applyMiddleware } from "redux";
-import logger from "redux-logger";
+import thunk from "redux-thunk";
 import rootReducer from "./root-reducer";
+import logger from "redux-logger";
+import { createStore, applyMiddleware, compose } from "redux";
 
-const middlewares = [logger];
+export const isLocalEnvironment = () => {
+  return process.env.REACT_APP_ENV === "local";
+};
 
-export const store = createStore(rootReducer, applyMiddleware(...middlewares));
+const middleWare = [thunk, logger];
+const middleWares = applyMiddleware(...middleWare);
 
-export default { store };
+export const store = createStore(
+  rootReducer,
+  isLocalEnvironment()
+    ? compose(middleWares, getDevToolConfig())
+    : compose(middleWares)
+);
+
+function getDevToolConfig() {
+  return (
+    window.__REDUX_DEVTOOLS_EXTENSION__.call &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
+}
+
+export default store;
+
+// import { createStore, applyMiddleware } from "redux";
+
+// import rootReducer from "./root-reducer";
+
+// const middlewares = [logger];
+
+// export const store = createStore(rootReducer, applyMiddleware(...middlewares));
+
+// export default { store };

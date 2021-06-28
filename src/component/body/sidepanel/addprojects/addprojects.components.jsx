@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import "./addprojects.styles.scss";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import {
-  firebaseAddProject,
-  timestamp,
-} from "./../../../../firebase/firebase.utils";
-import { selectCurrentUser } from "../../../../redux/user/user.selector";
+
 import {
   setShowAddProjects,
   setShowListProjects,
 } from "../../../../redux/projects/project.actions";
+import { firebaseAddProject } from "./../../../../firebase/firebase.utils";
+import { selectCurrentUser } from "../../../../redux/user/user.selector";
 
+import "./addprojects.styles.scss";
 export class Addprojects extends Component {
   state = { addproject: "" };
 
@@ -20,7 +18,7 @@ export class Addprojects extends Component {
     const { addproject } = this.state;
     const { selectCurrentUser, setShowAddProjects } = this.props;
     const { uid } = selectCurrentUser;
-    const createdAt = timestamp();
+    const createdAt = Date.now();
     try {
       firebaseAddProject({ addproject, uid, createdAt });
       this.setState({

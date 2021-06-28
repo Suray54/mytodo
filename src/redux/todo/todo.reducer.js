@@ -6,7 +6,8 @@ import {
   setWithProject,
 } from "./todo.util";
 const INITIAL_STATE = {
-  todos: [],
+  alltodos: [],
+  selectedtodos: [],
   header: "All Tasks",
   addToDo: false,
 };
@@ -21,7 +22,8 @@ const todoReducer = (state = INITIAL_STATE, action) => {
     case TodoActionTypes.SET_TODO:
       return {
         ...state,
-        todos: action.payload,
+        alltodos: action.payload,
+        selectedtodos: action.payload,
         header: "All Todos",
       };
 
@@ -33,26 +35,26 @@ const todoReducer = (state = INITIAL_STATE, action) => {
     case TodoActionTypes.SET_TODO_WITHDATE:
       return {
         ...state,
-        todos: setWithDate(state.todos),
+        selectedtodos: setWithDate(state.alltodos),
         header: action.payload,
       };
     case TodoActionTypes.SET_TODO_WITHTODAY:
       return {
         ...state,
-        todos: setWithToday(state.todos),
+        selectedtodos: setWithToday(state.alltodos),
         header: action.payload,
       };
     case TodoActionTypes.SET_TODO_WITHDUE:
       return {
         ...state,
-        todos: setWithDue(state.todos, action.payload),
+        selectedtodos: setWithDue(state.alltodos, action.payload),
         header: action.payload,
       };
 
     case TodoActionTypes.SET_TODO_WITHPROJECT:
       return {
         ...state,
-        todos: setWithProject(state.todos, action.payload),
+        selectedtodos: setWithProject(state.alltodos, action.payload),
         header: action.payload,
       };
 

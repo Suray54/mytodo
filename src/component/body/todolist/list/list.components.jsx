@@ -35,10 +35,9 @@ export class AllList extends Component {
             documents.push({ ...doc.data(), id: doc.id });
             return documents;
           });
-          console.log(documents);
+
           const maindocs = convertTodoSnapShotToDateMap(documents);
           setToDo(maindocs);
-          console.log(maindocs);
         });
       } else {
         await clearToDo();
@@ -52,6 +51,12 @@ export class AllList extends Component {
   handleDelete(id) {
     deleteTodo(id);
   }
+
+  convertIntoDate = (seconds) => {
+    let date = new Date(seconds);
+
+    return date.toLocaleString();
+  };
   render() {
     const { selectToDos, setShowAddToDo, selectHeader } = this.props;
     let output;
@@ -90,6 +95,10 @@ export class AllList extends Component {
                       }
                     >
                       {selectToDo.addtask}
+                    </p>
+                    <p className="mr-5"> {selectToDo.addproject}</p>
+                    <p className="mr-5">
+                      {this.convertIntoDate(selectToDo.createdAt)}
                     </p>
 
                     <div

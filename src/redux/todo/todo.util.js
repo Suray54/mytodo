@@ -6,17 +6,16 @@ export const setWithDate = (collections) => {
 };
 
 export const setWithToday = (collections) => {
-  const transformedCollection = collections
-    .slice()
-    .sort((a, b) => b.completed - a.completed);
+  const transformedCollection = collections.filter(
+    (collection) => collection.completed === true
+  );
   return transformedCollection;
 };
 
 export const setWithDue = (collections) => {
-  const transformedCollection = collections
-    .slice()
-    .sort((a, b) => a.completed - b.completed);
-
+  const transformedCollection = collections.filter(
+    (collection) => collection.completed === false
+  );
   return transformedCollection;
 };
 export const setWithProject = (collections, project) => {
